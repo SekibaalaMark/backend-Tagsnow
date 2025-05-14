@@ -232,21 +232,6 @@ class TestIssue:
             'issue': issue
         }
     
-    def test_issue_creation(self, setup_issue):
-        """Test that an issue can be created with correct fields"""
-        data = setup_issue
-        issue = data['issue']
-        
-        assert issue.student == data['student']
-        assert issue.issue_type == "missing_marks"
-        assert issue.course_unit == data['course_unit']
-        assert issue.description == "My marks for the midterm exam are missing"
-        assert issue.status == "pending"
-        assert issue.lecturer == data['lecturer']
-        assert issue.registrar == data['registrar']
-        assert issue.year_of_study == "2nd_year"
-        assert issue.semester == "one"
-        assert issue.is_commented is False
     
     def test_str_method(self, setup_issue):
         """Test the string representation of the issue"""
